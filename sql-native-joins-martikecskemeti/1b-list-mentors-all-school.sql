@@ -5,3 +5,9 @@
 -- BUT include all the schools, even if there's no mentor yet!
 
 -- columns: mentors.first_name, mentors.last_name, schools.name, schools.country
+
+SELECT first_name,last_name,name,country 
+FROM mentors
+    RIGHT OUTER JOIN schools
+        ON mentors.city = schools.city
+ORDER BY mentors.id ASC;

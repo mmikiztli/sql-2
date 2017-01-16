@@ -5,3 +5,10 @@
 --   BUT only for applications later than 2016-01-01
 
 -- columns: applicants.first_name, applicants.application_code, applicants_mentors.creation_date
+
+SELECT first_name,application_code,creation_date 
+FROM applicants
+    JOIN applicants_mentors
+        ON applicants.id = applicants_mentors.applicant_id
+WHERE applicants_mentors.creation_date > date '2016-01-01'
+ORDER BY applicants_mentors.creation_date DESC;
